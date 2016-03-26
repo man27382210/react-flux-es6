@@ -5,26 +5,21 @@ let { Component, PropTypes } = React;
 
 export default class MenuItem extends Component {
 
-  static propTypes = {
-    item: PropTypes.object.isRequired
-  };
-
   onItemClick = (e) => {
     e.preventDefault();
-    window.alert('You clicked ' + this.props.item["item"]);
+    window.alert('You clicked ' + this.props.value);
   }
 
   onItemRemove = (e) => {
     e.preventDefault();
-    console.log(this.props.item);
-    AppActions.removeItem(this.props.item);
+    AppActions.removeItem({"key": this.props.keyUse, "value": this.props.value});
   }
 
   render() {
     return (
-      <li key={'menu-item-' + this.props.item["key"]}>
+      <li key={'menu-item-' + this.props.keyUse}>
         <a href="#" onClick={this.onItemClick}>
-          {this.props.item["item"]}
+          {this.props.value}
         </a>
       <br/>
         <a href="#" onClick={this.onItemRemove}>

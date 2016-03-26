@@ -31,7 +31,6 @@ AppDispatcher.register((action) => {
       store.setAll(action.items);
       break;
     case ITEMS_ADD:
-      // var len = store.getAll().length;
       store.set();
       break;
     case ITEMS_REMOVE:

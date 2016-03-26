@@ -16,13 +16,7 @@ export default class BaseStore extends EventEmitter {
   }
 
   getAll() {
-    var array = [];
-    for(var i=0; i<Object.keys(this.data.toObject()).length;i++){
-      var key = Object.keys(this.data.toObject())[i];
-      var obj = {"key": key, "item": this.data.toObject()[key]};
-      array.push(obj);
-    }
-    return array ;
+    return this.data;
   }
 
   set() {
