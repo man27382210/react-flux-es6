@@ -5,12 +5,13 @@ import {
   ITEMS_GET_SUCCESS,
   ITEMS_GET_ERROR,
   ITEMS_ADD,
-  ITEMS_REMOVE
+  ITEMS_REMOVE,
+  ITEMS_ADD_COUNT
 } from '../constants/AppConstants';
 
 export default {
   getInit() {
-    
+
   },
   getItems() {
     WebAPI.getItems()
@@ -31,10 +32,16 @@ export default {
       actionType: ITEMS_ADD
     });
   },
-  removeItem(item){
+  removeItem(key){
     AppDispatcher.dispatch({
       actionType: ITEMS_REMOVE,
-      item: item
+      key: key
+    });
+  },
+  addCount(key){
+    AppDispatcher.dispatch({
+      actionType: ITEMS_ADD_COUNT,
+      key: key
     });
   }
 

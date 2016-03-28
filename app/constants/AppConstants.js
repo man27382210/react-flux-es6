@@ -7,3 +7,4 @@ export const ITEMS_GET_ERROR = 'ITEMS_GET_ERROR';
 export const ITEMS_UPDATED = 'ITEMS_UPDATED';
 export const ITEMS_ADD = 'ITEMS_ADD';
 export const ITEMS_REMOVE = 'ITEMS_REMOVE';
+export const ITEMS_ADD_COUNT = 'ITEMS_ADD_COUNT';

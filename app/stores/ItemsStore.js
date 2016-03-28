@@ -5,7 +5,8 @@ import {
   ITEMS_UPDATED,
   ITEMS_GET_SUCCESS,
   ITEMS_ADD,
-  ITEMS_REMOVE
+  ITEMS_REMOVE,
+  ITEMS_ADD_COUNT
 } from '../constants/AppConstants';
 
 class ItemsStore extends BaseStore {
@@ -34,8 +35,12 @@ AppDispatcher.register((action) => {
       store.set();
       break;
     case ITEMS_REMOVE:
-      var obj = action.item;
-      store.remove(obj);
+      var key = action.key;
+      store.remove(key);
+      break;
+    case ITEMS_ADD_COUNT:
+      var key = action.key;
+      store.addCount(key);
       break;
     default:
   }
